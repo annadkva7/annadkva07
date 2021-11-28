@@ -29,6 +29,7 @@ enum animal_type {
 	COW, /**< Корова */
 	DOG, /**< Собака */
 	CAT, /**< Котик */
+	HUMAN, /**< Людина */
 	ANIMAL_TYPE_COUNT /**< Кількість тварин */
 };
 
