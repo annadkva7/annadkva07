@@ -1,8 +1,7 @@
 /**
  * @file lib.c
  * @brief Файл з реалізацією функцій, що
-    1. Заповнює динамічно виділений масив будь-якими цілими числами до 10;
-    2. Перетворює діагональ двувимірного масиву в одновимірний динамічний масив;
+    1. Перетворює діагональ двувимірного масиву в одновимірний динамічний масив;
     3. Сортує одновимірний масив за зростанням за допомогою методу бульбашок;
  *
  * @author Diakova A.
@@ -11,34 +10,24 @@
  */
  
 #include "lib.h"
-void filling(int** arr, int N) {
 
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      arr[i][j] = random() % 10;
-    }
+void diagonal(long int* line_arr, long int** arr, unsigned long int N) {
 
-  }
-}
-
-void diagonal(int* line_arr, int** arr, int N) {
-
-  for (int i = 0; i < N; i++) {
+  for (unsigned long int i = 0; i < N; i++) {
     line_arr[i] = arr[i][i];
   }
 }
 
-void bubble(int* line_arr, int N) {
-  int p = 0;
-  for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {   // line_array[j] < line_array[j - 1] //
+void bubble(long int* line_arr, unsigned long int N) {
+  long int p = 0;
+  for (unsigned long int i = 0; i < N; i++) {
+    for (unsigned long int j = 0; j < N; j++) {   // line_array[j] < line_array[j - 1] //
       if (line_arr[j - 1] > line_arr[j]) {
         p = line_arr[j];
         line_arr[j] = line_arr[j - 1];
         line_arr[j - 1] = p;
       }
-
+    
     }
-
   }
 }

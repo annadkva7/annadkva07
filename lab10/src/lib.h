@@ -1,8 +1,7 @@
 /**
  * @file lib.h
  * @brief Файл з описом функцій, що
-    1. Заповнює динамічно виділений масив будь-якими цілими числами до 10;
-    2. Перетворює діагональ двувимірного масиву в одновимірний динамічний масив;
+    1. Перетворює діагональ двувимірного масиву в одновимірний динамічний масив;
     3. Сортує одновимірний масив за зростанням за допомогою методу бульбашок;
  *
  * @author Diakova A.
@@ -15,8 +14,8 @@
 
 #include <malloc.h>
 #include <stdlib.h>
-void filling(int** arr, int N);
-void diagonal(int* line_arr, int** arr, int N);
-void bubble(int* line_arr, int N);
+
+void diagonal(long int* line_arr, long int** arr, unsigned long int N);
+void bubble(long int* line_arr, unsigned long int N);
 
 #endif

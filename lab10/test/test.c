@@ -1,21 +1,31 @@
 #include "../src/lib.h"
 #include <check.h>
-#define size 100
+#include <malloc.h>
 
-START_TEST(test_array) {
-  int data_N = 3;
+START_TEST(test_diagonal)
+{
+    long int **data_arrr = (long int** )malloc(3 * sizeof(long int *));
+    long int **data_arr = (long int** )malloc(3 * sizeof(long int *));
+    long int** data_arrr = { { 0, 0, 0}, 
+                            {3, 6, 7},
+                            {5, 3, 5 } };
+    data_arr = data_arrr;
+    long int data_line_arr[0];
+    long int expected_value[] = {0, 6, 5};
 
-  int actual_value = bubble(line_array, data_N);
-  int expected_value = test_array;
-
-  ck_assert_int_eq(expected_value, actual_value);
+    diagonal(data_line_arr, data_arr, 3);
+    
+    for(int i = 0; i < 3; i++) 
+    {    
+        ck_assert_int_eq(expected_value[i], data_line_arr[i]);
+    }
 }
 END_TEST
 
 int main(void) {
   Suite *s = suite_create("Programing");
   TCase *tc_core = tcase_create("lab10");
-  tcase_add_test(tc_core, test_array);
+  tcase_add_test(tc_core, test_diagonal);
   suite_add_tcase(s, tc_core);
   SRunner *sr = srunner_create(s);
   srunner_run_all(sr, CK_VERBOSE);

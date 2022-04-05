@@ -12,7 +12,7 @@
 
 /**
  * @file main.c
- * @brief Файл з демонстрацією роботи функцій filling, diagonal, bubble;
+ * @brief Файл з демонстрацією роботи функцій diagonal, bubble;
  *
  * @author Diakova A.
  * @date 30-mar-2022
@@ -22,31 +22,26 @@
  #include "lib.h"
 
 int main() {
-  int N = 0;
-    int **array = (int** )malloc(N * sizeof(int *));
-  for (int i = 0; i < N; i++) {
-    array[i] = (int*)malloc(N * sizeof(int));
+  unsigned long int N = 3;
+    long int **array = (long int** )malloc(N * sizeof(long int *));
+  for (unsigned long int i = 0; i < N; i++) {
+    array[i] = (long int*)malloc(N * sizeof(long int));
   }
-    filling(array, N);
-    for (int i = 0; i < N; i++) {
-    for (int j = 0; j < N; j++) {
-      printf("%d", array[i][j]);
-      printf(" ");
+ 
+  for (unsigned long int i = 1; i < N; i++) {
+    for (unsigned long int j = 0; j < N; j++) {
+      array[i][j] = random() % 10;
     }
   }
-   printf("\n");
-  
 
-  int *line_array = (int *)malloc(N * sizeof(int *));
+  long int *line_array = (long int *)malloc(N * sizeof(long int *));
   diagonal(line_array, array, N);
-  for (int i = 0; i < N; i++) {
-    printf("%d", line_array[i]);
-    printf(" ");
-  }
+  
   bubble(line_array, N);
-  for (int i = 0; i < N; i++) {
-    printf("%d", line_array[i]);
-  }
+
+  free(array);
+  free(line_array);
+  
 
     return 0;
 }
