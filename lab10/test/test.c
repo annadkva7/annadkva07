@@ -4,16 +4,23 @@
 
 START_TEST(test_diagonal)
 {
-    long int **data_arrr = (long int** )malloc(3 * sizeof(long int *));
-    long int **data_arr = (long int** )malloc(3 * sizeof(long int *));
-    long int** data_arrr = { { 0, 0, 0}, 
-                            {3, 6, 7},
-                            {5, 3, 5 } };
-    data_arr = data_arrr;
-    long int data_line_arr[0];
-    long int expected_value[] = {0, 6, 5};
+   int **data_arrr = (int** )malloc(3 * sizeof(int *));
+   for( int i = 0; i < 3; i++) {  
+     *(data_arrr + i) = (int*)malloc(3 * sizeof(int));
+   }
+   int *data_line_arr = (int* )malloc(3 * sizeof(int));
 
-    diagonal(data_line_arr, data_arr, 3);
+   
+
+    for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+      *(*(data_arrr + i) + j) = i + j;
+    }
+  }
+
+    int expected_value[] = {0, 2, 4};
+
+    diagonal(data_line_arr, data_arrr, 3);
     
     for(int i = 0; i < 3; i++) 
     {    

@@ -11,21 +11,21 @@
  
 #include "lib.h"
 
-void diagonal(long int* line_arr, long int** arr, unsigned long int N) {
+void diagonal(int* line_arr, int** arr, int N) {
 
-  for (unsigned long int i = 0; i < N; i++) {
-    line_arr[i] = arr[i][i];
+  for (int i = 0; i < N; i++) {
+    *(line_arr + i) = *(*(arr + i) + i);
   }
 }
 
-void bubble(long int* line_arr, unsigned long int N) {
-  long int p = 0;
-  for (unsigned long int i = 0; i < N; i++) {
-    for (unsigned long int j = 0; j < N; j++) {   // line_array[j] < line_array[j - 1] //
-      if (line_arr[j - 1] > line_arr[j]) {
-        p = line_arr[j];
-        line_arr[j] = line_arr[j - 1];
-        line_arr[j - 1] = p;
+void bubble(int* line_arr, int N) {
+  int p = 0;
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {   // line_array[j] < line_array[j - 1] //
+      if (*(line_arr + (j - 1)) > *(line_arr + j)) {
+        p = *(line_arr + j);
+        *(line_arr + j) = (*(line_arr + (j - 1)));
+        *(line_arr + (j - 1)) = p;
       }
     
     }

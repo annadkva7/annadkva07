@@ -22,25 +22,21 @@
  #include "lib.h"
 
 int main() {
-  unsigned long int N = 3;
-    long int **array = (long int** )malloc(N * sizeof(long int *));
-  for (unsigned long int i = 0; i < N; i++) {
-    array[i] = (long int*)malloc(N * sizeof(long int));
+ int N = 3;
+    int **array = (int** )malloc(N * sizeof(int *));
+  for (int i = 0; i < N; i++) {
+    *(array + i) = (int*)malloc(N * sizeof(int));
   }
  
-  for (unsigned long int i = 1; i < N; i++) {
-    for (unsigned long int j = 0; j < N; j++) {
-      array[i][j] = random() % 10;
+  for (int i = 0; i < N; i++) {
+    for (int j = 0; j < N; j++) {
+      *(*(array + i) + j) = i + j;
     }
   }
-
-  long int *line_array = (long int *)malloc(N * sizeof(long int *));
+ 
+  int *line_array = (int *)malloc(N * sizeof(int *));
   diagonal(line_array, array, N);
-  
   bubble(line_array, N);
-
-  free(array);
-  free(line_array);
   
 
     return 0;

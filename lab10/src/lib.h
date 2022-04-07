@@ -15,7 +15,7 @@
 #include <malloc.h>
 #include <stdlib.h>
 
-void diagonal(long int* line_arr, long int** arr, unsigned long int N);
-void bubble(long int* line_arr, unsigned long int N);
+void diagonal(int* line_arr, int** arr, int N);
+void bubble(int* line_arr, int N);
 
 #endif

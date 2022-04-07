@@ -36,7 +36,7 @@ int **first_array = (int** )malloc(N1 * sizeof(int *));
 printf("Please, input the first matrix:\n");
 for (int i = 0; i < N1; i++) {
     for(int j = 0; j < M1; j++) {
-    scanf("%d", *((first_array + i) + j));
+    scanf("%4d", (*(first_array + i) + j));
     }
 }
 
@@ -56,7 +56,7 @@ printf("Please, input the second column:\n");
 scanf("%d", &N2);
 printf("\n");
 
-printf("Please, input the first line:\n");
+printf("Please, input the second line:\n");
 scanf("%d", &M2);
 printf("\n");
 
@@ -68,7 +68,7 @@ int **second_array = (int** )malloc(N2 * sizeof(int *));
 printf("Please, input the second matrix:\n");
 for (int i = 0; i < N2; i++) {
     for(int j = 0; j < M2; j++) {
-    scanf("%d", (*(second_array) + i) + j);
+    scanf("%4d", (*(second_array + i) + j));
     }
 }
 
