@@ -5,6 +5,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int sum(int **first_array, int **second_array, int **result_array, int N);
+int sum(int **first_array, int **second_array, int **result_array, int N, int M);
 
 #endif
