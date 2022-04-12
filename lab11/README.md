@@ -8,5 +8,9 @@
     Наводжу ступень покриття коду модульними тестами:
 ./dist/test.bin
 Running suite(s): Programing
+The result of sum is:
+
+   0   2   4
+   2   4   6
 100%: Checks: 1, Failures: 0, Errors: 0
-test/test.c:27:P:lab10:test_diagonal:0: Passed
+test/test.c:45:P:lab11:test_sum:0: Passed
