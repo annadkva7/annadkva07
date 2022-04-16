@@ -10,10 +10,10 @@ START_TEST(test_searching)
    char *data_text = (char* )malloc(128 * sizeof(char));
    data_text = "552Lalalala 7 kkkkkkkkkkkkkk<<<<< ,,,,,,,, 333/// 9";
    int SIZE = strlen(data_text);
-
+   int *temp_data = (int* )malloc(128 * sizeof(int));
    int expected_value[8] = {-5, -5, -2, -7, -3, -3, -3, -9};
 
-   numbers_searching(data_text, SIZE);
+   numbers_searching(data_text, SIZE, temp_data);
 
    int result_data_searching[8];
     

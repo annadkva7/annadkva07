@@ -9,37 +9,15 @@
  
 #include "lib.h"
 
-void numbers_searching(char *text, int SIZE) { 
-    
-    int *temp = (int*)malloc(SIZE * sizeof(int));
-    
-    for ( int i = 0; i < SIZE; i++ ) {
+void numbers_searching(char *text, int SIZE, char *temp) { 
 
-    int number = 0;
-        if ( *(text + i) >= '0' && *(text + i) <= '9' ) {
-            number = 10*number - ( *(text + i) - '0' );   
-        }
-        else {
-            number = 0;
-        }
-    *(temp + i) = number;
-        
-    }
-    
-    printf("Input all numbers in this text:\n");
-
-    for ( int i = 0; i < SIZE; i++) {
-        switch (*(temp + i)) {
-            case 0: {
-            break;
+        for( int i = 0; i < SIZE; i++ ) {
+            if( (*(text + i) >= '0' && *(text + i) <= '9') ) {
+              *(temp + i) = *(text + i);
             }
-            default: {
-                printf("%d", *(temp + i));
+
+            else {
+
             }
-        }
-    }
-
-    printf("\n");
-    free(temp);
-
-    }
+      }
+}

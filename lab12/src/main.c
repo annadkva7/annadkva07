@@ -46,9 +46,18 @@ int MAX_LENGHT = 256;
     }
     printf("\n");
 
-    numbers_searching(text, SIZE);
+    char *temp = (char*)malloc(SIZE * sizeof(char));
+    char *result = (char*)malloc(SIZE * sizeof(char));
+    numbers_searching(text, SIZE, temp);
+
+    printf("Print all found numbers: ");
+
+    for( int i = 0; i < SIZE; i++ ) {
+        printf("%c", *(temp + i));
+    } 
 
     free(text);
+    free(temp);
 
     return 0;
 

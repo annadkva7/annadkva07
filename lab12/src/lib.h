@@ -15,6 +15,6 @@
 #include <malloc.h>
 #include <string.h>
 
-void numbers_searching(char *text, int SIZE);
+void numbers_searching(char *text, int SIZE, char *temp);
 
 #endif
