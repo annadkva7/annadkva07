@@ -33,7 +33,11 @@ int main() {
       *(*(array + i) + j) = i + j;
     }
   }
- 
+ for( int i = 0; i < N; i++) {
+   for( int j = 0; j < N; j++) {
+     printf("%d ", *(*(array + i) + j));
+   }
+ }
   int *line_array = (int *)malloc(N * sizeof(int *));
   diagonal(line_array, array, N);
   bubble(line_array, N);

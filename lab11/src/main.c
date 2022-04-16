@@ -30,13 +30,13 @@ int N2;
 int M1;
 int M2;
 
-scanf("%d", &N1); /* Размер первого массива */
+scanf("%d", &N1); 
 printf("\n");
 
 scanf("%d", &M1);
 printf("\n");
 
-scanf("%d", &N2); /* Размер второго массива */
+scanf("%d", &N2); 
 printf("\n");
 
 scanf("%d", &M2);
@@ -103,6 +103,10 @@ int **result_array = (int** )malloc(N * sizeof(int *));
   }
 
 sum(first_array, second_array, result_array, N, M);
+
+free(first_array);
+free(second_array);
+free(result_array);
 
 return 0;
 }
