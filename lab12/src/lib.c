@@ -6,10 +6,11 @@
  * @date 17-apr-2022
  * @version 1.0
  */
- 
+  
 #include "lib.h"
 
-void numbers_searching(char *text, int SIZE, char *temp) { 
+char numbers_searching(char *text, char *temp) { 
+  int SIZE = strlen(text);
 
         for( int i = 0; i < SIZE; i++ ) {
             if( (*(text + i) >= '0' && *(text + i) <= '9') ) {
@@ -20,4 +21,6 @@ void numbers_searching(char *text, int SIZE, char *temp) {
 
             }
       }
+
+      return temp;
 }

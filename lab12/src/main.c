@@ -48,7 +48,7 @@ int MAX_LENGHT = 256;
 
     char *temp = (char*)malloc(SIZE * sizeof(char));
     char *result = (char*)malloc(SIZE * sizeof(char));
-    numbers_searching(text, SIZE, temp);
+    numbers_searching(text, temp);
 
     printf("Print all found numbers: ");
 
