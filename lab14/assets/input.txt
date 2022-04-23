@@ -1,2 +1,5 @@
-y Google 3 Anna Diakova annadkva07@gmail.com smart,honestly
-n Google 5 Stasik Medved milashka@gmail.com cute,beuatiful
+yes 10 Google Anna Diakova annadkva07@gmail.com smart,honestly 
+no 2 Google Stasik Medved milashka@gmail.com cute,beuatiful 
+yes 4 EPAM Aboba Boba ksfojJFEW@gmail.com cool,nice
+no 1 Google Gandon Gandonovich pochta@mail.ru awful,urod
+yes 3 NIX GGG KFKFKFK pochta@gmail.com norm,super
