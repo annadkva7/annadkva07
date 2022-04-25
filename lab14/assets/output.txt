@@ -1,8 +1,22 @@
+Received information about employees: 
 
-Sorted workers by seniority: 
-Gandon Gandonovich: 1
-Stasik Medved: 2
-GGG KFKFKFK: 3
-Aboba Boba: 4
-kddgk pppp: 5
-Anna Diakova: 10
+yes
+10
+Google
+Anna Diakova
+annadkva07@gmail.com
+smart,honestly
+
+no
+2
+Google
+Stasik Medved
+milashka@gmail.com
+cute,beuatiful
+
+yes
+4
+EPAM
+Aboba Boba
+ksfojJFEW@gmail.com
+cool,nice

@@ -16,8 +16,20 @@
  * @date 19-apr-2022
  * @version 1.0
  */
- 
+
 #include "lib.h"
+
+struct worker {
+    int experience;
+    char *have_insurance; 
+    char *company;
+    struct contact_details {
+        char *first_name;
+        char *last_name;
+        char *email;
+    } c_d;
+    char *characteristics;
+} w;
 
 int main() {
 
