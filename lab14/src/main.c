@@ -16,7 +16,7 @@
 
 /**
  * @file main.c
- * @brief Файл з демонстрацією роботи функцій read_from_file, write_to_file, convertion_int, convertion_char, print_on_screen, does_not_have_insurance, sorting_by_seniority;
+ * @brief Файл з демонстрацією роботи функцій read_from_file, write_to_file, convertion, print_on_screen, does_not_have_insurance, sorting_by_seniority;
  *
  * @author Diakova A.
  * @date 25-apr-2022
@@ -63,7 +63,7 @@ int main(void) {
     }
 
     else {
-        printf("\nHave insurance:\n");
+         printf("\nHave insurance:\n");
         for( int j = 0; j < buffer; j++) {
             convertion_char((array + temp)->have_insurance[j]);
         }
@@ -92,7 +92,9 @@ int main(void) {
         for( int j = 0; j < buffer; j++) {
             convertion_char((array + temp)->characteristics[j]);
         }
-    }   
+    }
+
+    free(array);
 
     return 0;
 }

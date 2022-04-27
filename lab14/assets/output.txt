@@ -5,18 +5,11 @@ yes
 Google
 Anna Diakova
 annadkva07@gmail.com
-smart,honestly
+cool,nice
 
 no
-2
+6
 Google
-Stasik Medved
-milashka@gmail.com
-cute,beuatiful
-
-yes
-4
-EPAM
-Aboba Boba
-ksfojJFEW@gmail.com
-cool,nice
+Stas Medved
+abobaboba@gmail.com
+norm,cool

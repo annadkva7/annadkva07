@@ -1,22 +1,27 @@
-#include "../src/lib.h"
+#include "/home/turtlee_/programming-Diakova/lab14/src/lib.h"
 #include <check.h>
 #include <malloc.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-START_TEST(test_convertion_int)
-{
-  int test_number = 12;
-  FILE *test_file = fopen("/home/turtlee_/programming-Diakova/lab14/assets/test.txt", "w");
-    
-  unsigned char* M = (unsigned char*)&test_number;
-    for (int byte = 0; byte < sizeof(int); byte++, M++) {
-      fprintf(test_file, convertion_int(*M));
-    }
+/*void assert_worker(struct worker *expected_value, struct worker *result_value) {
+  ck_assert_str_eq(expected_value->company, result_value->company);
 
-  
-  ck_assert_str_eq(expected_value.company, test_array->company[1]);
-  
+} */
+
+START_TEST(test_read_from_file)
+{
+  int test_amount_of_workers = 1;
+  FILE *test_input = NULL;
+
+  struct worker *expected_value = (struct worker*)malloc(1 * sizeof(struct worker));
+  expected_value->company = "Google";
+
+  struct worker *result_value = (struct worker*)malloc(1 * sizeof(struct worker));
+
+  read_from_file(test_input, result_value, test_amount_of_workers);
+
+  ck_assert_str_eq(expected_value->company, result_value->company);
 
 }
 END_TEST
@@ -24,7 +29,7 @@ END_TEST
 int main(void) {
   Suite *s = suite_create("Programing");
   TCase *tc_core = tcase_create("lab14");
-  tcase_add_test(tc_core, test_convertion_int);
+  tcase_add_test(tc_core, test_read_from_file);
   suite_add_tcase(s, tc_core);
   SRunner *sr = srunner_create(s);
   srunner_run_all(sr, CK_VERBOSE);

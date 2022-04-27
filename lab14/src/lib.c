@@ -27,6 +27,7 @@ void convertion_int(unsigned char letter) {
     }
   }
   printf(" ");
+
 }
 
 void convertion_char(char symbol) {

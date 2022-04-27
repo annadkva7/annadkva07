@@ -1,6 +1,2 @@
-10 yes Google Anna Diakova annadkva07@gmail.com smart,honestly
-2 no Google Stasik Medved milashka@gmail.com cute,beuatiful 
-4 yes EPAM Aboba Boba ksfojJFEW@gmail.com cool,nice
-1 no Google Gandon Gandonovich pochta@mail.ru awful,urod
-3 yes NIX GGG KFKFKFK pochta@gmail.com norm,super
-5 no Google kddgk pppp gjkdg@gmail.com soydet
+10 yes Google Anna Diakova annadkva07@gmail.com cool,nice
+6 no Google Stas Medved abobaboba@gmail.com norm,cool
