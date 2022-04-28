@@ -1,0 +1,29 @@
+Received information about employees: 
+
+Have insurance: 1
+Experience: 10
+Company: Google
+Worker name: Anna Diakova
+Email: annadkva07@gmail.com
+Characteristics: cool,nice
+
+Have insurance: 0
+Experience: 6
+Company: NIX
+Worker name: Stas Medved
+Email: abobaboba@gmail.com
+Characteristics: norm,cool
+
+Have insurance: 0
+Experience: 4
+Company: Google
+Worker name: LALAL LALALAL
+Email: jdfhfdsk@gmail.com
+Characteristics: norm,super
+
+Have insurance: 0
+Experience: 15
+Company: Google
+Worker name: ALFSL ALSLFLFL
+Email: dlsgflrs@mail.ru
+Characteristics: durak,moscal

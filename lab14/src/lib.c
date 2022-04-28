@@ -40,21 +40,16 @@ void read_from_file(FILE *file, struct worker *array, int amount_of_workers) { /
 void write_to_file(FILE *file, struct worker *array, int amount_of_workers) { /* исправно */
     fprintf(file, "Received information about employees: \n");
     for (int i = 0; i < amount_of_workers; i++) {
-      fprintf(file, "\n%d\n%d\n%s\n%s %s\n%s\n%s\n",(array + i)->have_insurance, (array + i)->experience,(array + i)->company, (array + i)->details.first_name,(array + i)->details.last_name, (array + i)->details.email,(array + i)->characteristics); 
+      fprintf(file, "\nHave insurance: %d\nExperience: %d\nCompany: %s\nWorker name: %s %s\nEmail: %s\nCharacteristics: %s\n",(array + i)->have_insurance, (array + i)->experience,(array + i)->company, (array + i)->details.first_name,(array + i)->details.last_name, (array + i)->details.email, (array + i)->characteristics);
+      printf("\nHave insurance: %d\nExperience: %d\nCompany: %s\nWorker name: %s %s\nEmail: %s\nCharacteristics: %s\n", (array + i)->have_insurance,(array + i)->experience, (array + i)->company,(array + i)->details.first_name, (array + i)->details.last_name,(array + i)->details.email, (array + i)->characteristics);
     }
-}
-
-void print_on_screen(struct worker *array, int amount_of_workers) { /* исправно */
-  printf("Received information about employees: \n");
-  for (int i = 0; i < amount_of_workers; i++) {
-    printf("\n%d\n%d\n%s\n%s %s\n%s\n%s\n", (array + i)->have_insurance,(array + i)->experience, (array + i)->company,(array + i)->details.first_name, (array + i)->details.last_name,(array + i)->details.email, (array + i)->characteristics);
-  }
+    printf("\n");
 }
 
 void does_not_have_insurance(struct worker *array, int amount_of_workers) { /* исправно */
   int temp = 0;
   printf("\n\nUninsured Google workers: \n");
-  for( int i = 0; i < amount_of_workers; i++) {
+  for ( int i = 0; i < amount_of_workers; i++) {
       if ( (array + i)->have_insurance == false) {
           temp = strcmp((array + i)->company, "Google");
           if( temp == 0) {
@@ -65,23 +60,32 @@ void does_not_have_insurance(struct worker *array, int amount_of_workers) { /* �
   }
 }
 
-void sorting_by_seniority(struct worker *array, int amount_of_workers) {
+int compare_seniority(const void *a, const void *b) {
+  int argument_1 = *(const int*)a;
+  int argument_2 = *(const int*)b;
 
-  printf("\nSorted workers by seniority: \n");
+  return (argument_1 > argument_2) - (argument_1 < argument_2);
+}
 
-  struct worker temp;
-
-  for (int i = 0; i < amount_of_workers - 1; ++i) {
-    for (int j = 0; j < amount_of_workers - 1; ++j) {
-      if ((array + (j - 1))->experience < (array + j)->experience) {
-        temp = *(array + (j + 1));
-        *(array + (j + 1)) = *(array + j);
-        *(array + j) = temp;
-      }
-    }
+void write_to_bin(FILE *file, struct worker *array, int amount_of_workers) {
+  for( int i = 0; i < amount_of_workers; i++) {
+    fwrite((array + i), sizeof(struct worker), amount_of_workers, file);
   }
+}
+void read_from_bin(FILE *file, struct worker *for_reading) {
+  int temp = 0;
+  printf("Please, input the index for reading structure: ");
+  scanf("%d", &temp);
+  fseek(file, (temp *sizeof(struct worker)), SEEK_CUR);
+  fread(&(for_reading->have_insurance), sizeof(int), 1, file);
+  fread(&(for_reading->experience), sizeof(int), 1, file);
+  fread(for_reading->company, 16, 1, file);
+  fread(for_reading->details.last_name, 16, 1, file);
+  fread(for_reading->details.first_name, 16, 1, file);
+  fread(for_reading->details.email, 16, 1, file);
+  fread(for_reading->characteristics, 16, 1, file);
 
-  for (int i = 0; i < amount_of_workers; ++i) {
-    printf("%s %s: %d\n", (array + i)->details.first_name,(array + i)->details.last_name, (array + i)->experience);
-  }
+  printf("\nHave insurance: %d\nExperience: %d\nCompany: %s\nWorker name: %s %s\nEmail: %s\nCharacteristics: %s\n", for_reading->have_insurance,for_reading->experience, for_reading->company,for_reading->details.first_name, for_reading->details.last_name,for_reading->details.email, for_reading->characteristics);
+
+  
 }

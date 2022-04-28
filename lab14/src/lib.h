@@ -39,17 +39,15 @@ struct worker {
   int experience;
   bool have_insurance;
   char *company;
-    struct contact_details details;
+  struct contact_details details;
   char *characteristics;
 } w;
 
-
-
 void read_from_file(FILE *file, struct worker *array, int amount_of_workers);
 void write_to_file(FILE *file, struct worker *array, int amount_of_workers);
-void print_on_screen(struct worker *array, int amount_of_workers);
 void does_not_have_insurance(struct worker *array, int amount_of_workers);
-void sorting_by_seniority(struct worker *array, int amount_of_workers);
-int intComparator ( const void * first, const void * second );
+int compare_seniority(const void *a, const void *b);
+void write_to_bin(FILE *file, struct worker *array, int amount_of_workers);
+void read_from_bin(FILE *file, struct worker *for_reading);
 
 #endif
