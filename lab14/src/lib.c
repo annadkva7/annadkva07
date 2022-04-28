@@ -66,26 +66,3 @@ int compare_seniority(const void *a, const void *b) {
 
   return (argument_1 > argument_2) - (argument_1 < argument_2);
 }
-
-void write_to_bin(FILE *file, struct worker *array, int amount_of_workers) {
-  for( int i = 0; i < amount_of_workers; i++) {
-    fwrite((array + i), sizeof(struct worker), amount_of_workers, file);
-  }
-}
-void read_from_bin(FILE *file, struct worker *for_reading) {
-  int temp = 0;
-  printf("Please, input the index for reading structure: ");
-  scanf("%d", &temp);
-  fseek(file, (temp *sizeof(struct worker)), SEEK_CUR);
-  fread(&(for_reading->have_insurance), sizeof(int), 1, file);
-  fread(&(for_reading->experience), sizeof(int), 1, file);
-  fread(for_reading->company, 16, 1, file);
-  fread(for_reading->details.last_name, 16, 1, file);
-  fread(for_reading->details.first_name, 16, 1, file);
-  fread(for_reading->details.email, 16, 1, file);
-  fread(for_reading->characteristics, 16, 1, file);
-
-  printf("\nHave insurance: %d\nExperience: %d\nCompany: %s\nWorker name: %s %s\nEmail: %s\nCharacteristics: %s\n", for_reading->have_insurance,for_reading->experience, for_reading->company,for_reading->details.first_name, for_reading->details.last_name,for_reading->details.email, for_reading->characteristics);
-
-  
-}

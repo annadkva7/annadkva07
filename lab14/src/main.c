@@ -32,8 +32,7 @@ int main(void) {
 
   FILE *input_file = fopen("/home/turtlee_/programming-Diakova/lab14/assets/input.txt", "r");
   FILE *output_file = fopen("/home/turtlee_/programming-Diakova/lab14/assets/output.txt", "w");
-  FILE *binary_file = fopen("/home/turtlee_/programming-Diakova/lab14/assets/output.bin", "w");
-  FILE *binary_ = fopen("/home/turtlee_/programming-Diakova/lab14/assets/output.bin", "r");
+  FILE *file = fopen("/home/turtlee_/programming-Diakova/lab14/assets/output.txt", "w");
 
   int buffer = 32;
   int amount_of_workers = 0;
@@ -59,9 +58,6 @@ int main(void) {
   }
 
   does_not_have_insurance(array, amount_of_workers);
-
-  write_to_bin(binary_file, array, amount_of_workers);
-  read_from_bin(binary_,bin);
 
 
   free(array);
