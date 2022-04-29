@@ -38,7 +38,7 @@ struct worker {
 
 void read_from_file(FILE *file, struct worker *array, int amount_of_workers);
 void write_to_file(FILE *file, struct worker *array, int amount_of_workers);
-void does_not_have_insurance(struct worker *array, int amount_of_workers, bool check);
+void does_not_have_insurance(struct worker *array, int amount_of_workers);
 int compare_seniority(const void *a, const void *b);
 
 #endif
