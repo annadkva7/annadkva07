@@ -23,7 +23,6 @@ START_TEST(test_read_from_file)
     write_to_file(file, de, dir);
     ck_assert_str_eq(expected_value, result_data_input);
   
-
 }
 END_TEST
 

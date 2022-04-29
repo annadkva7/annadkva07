@@ -1,4 +1,6 @@
-10 1 Google Anna Diakova annadkva07@gmail.com cool,nice
-6 0 NIX Stas Medved abobaboba@gmail.com norm,cool
-4 0 Google LALAL LALALAL jdfhfdsk@gmail.com norm,super
-15 0 Google ALFSL ALSLFLFL dlsgflrs@mail.ru durak,moscal
+10 0 Google Anna Diakova annadkva07@gmail.com cool,cool
+6 1 NIX Stas Medved abobaboba@gmail.com honestly,clever
+4 1 Google Deniska Denisov ddendden@gmail.com cool,responsible
+9 0 Google Liza Kurinna lizaliza@gmail.com shy,clever
+15 0 Google Ivan Ivanov jjjjjj@gmail.com disorganized,moscal
+8 1 Google Sofia Serezenka sofiasofia@gmail.com tactful,cool

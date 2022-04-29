@@ -1,20 +1,13 @@
 /**
  * @file lib.c
  * @brief Файл з реалізацією функцій, що
- * 1. void convertion_int - трансформує десятичне число типу int до його
- * бінарного подання.
- * 2. void convertion_char - трансформує символ типу char до його бінарного
- * подання.
- * 3. void read_from_file - зчитує з файлу input.txt вхідну інформацію про
+ * 1. void read_from_file - зчитує з файлу input.txt вхідну інформацію про
  * працівників і передає її програмі.
- * 4. void write_to_file - передає файлу output.txt інформацію про кількість і
- * характеристику робітників.
- * 5. void does_not_have_insuranse - аналізує масив структур і видає на екран
+ * 2. void write_to_file - передає файлу output.txt інформацію про кількість і
+ * характеристику робітників і виводить у термінал.
+ * 3. void does_not_have_insuranse - аналізує масив структур і видає на екран
  * кількість працівників компанії Google без страхування.
- * 6. void sorting_by_seniority - сортує масив структур за характерною ознакою -
- * стаж роботи.
- * 7. void print_on_screen - виводить на екран усю інформацію, отриману з
- * вхідного файлу.
+ * 4. int comparing_seniority - допоміжна функція для функції qsort.
  *
  * @author Diakova A.
  * @date 25-apr-2022
@@ -23,7 +16,7 @@
 
 #include "lib.h"
 
-void read_from_file(FILE *file, struct worker *array, int amount_of_workers) { /* исправно */
+void read_from_file(FILE *file, struct worker *array, int amount_of_workers) {
     for (int i = 0; i < amount_of_workers; i++) {
       fscanf(file, "%d", &((array + i)->experience));
 
@@ -37,7 +30,7 @@ void read_from_file(FILE *file, struct worker *array, int amount_of_workers) { /
     }
 }
 
-void write_to_file(FILE *file, struct worker *array, int amount_of_workers) { /* исправно */
+void write_to_file(FILE *file, struct worker *array, int amount_of_workers) {
     fprintf(file, "Received information about employees: \n");
     for (int i = 0; i < amount_of_workers; i++) {
       fprintf(file, "\nHave insurance: %d\nExperience: %d\nCompany: %s\nWorker name: %s %s\nEmail: %s\nCharacteristics: %s\n",(array + i)->have_insurance, (array + i)->experience,(array + i)->company, (array + i)->details.first_name,(array + i)->details.last_name, (array + i)->details.email, (array + i)->characteristics);
@@ -46,15 +39,17 @@ void write_to_file(FILE *file, struct worker *array, int amount_of_workers) { /*
     printf("\n");
 }
 
-void does_not_have_insurance(struct worker *array, int amount_of_workers) { /* исправно */
+void does_not_have_insurance(struct worker *array, int amount_of_workers, bool check) {
   int temp = 0;
   printf("\n\nUninsured Google workers: \n");
   for ( int i = 0; i < amount_of_workers; i++) {
+    check = 0;
       if ( (array + i)->have_insurance == false) {
           temp = strcmp((array + i)->company, "Google");
           if( temp == 0) {
           printf("%s %s", (array + i)->details.first_name, (array + i)->details.last_name);
           printf("; ");
+          check = 1;
           }
       }    
   }

@@ -28,3 +28,5 @@ Filename                                               Regions    Missed Regions
 TOTAL                                                        4                 1    75.00%           2                 1    50.00%          14                 4    71.43%
 llvm-cov show dist/test.bin -instr-profile=dist/test.profdata src/*.c --format html > dist/coverage.html
 
+Висновок: під час виконання цієї лабораторної роботи я закріпила навички взаємодії з файлами, а також покращила свої навички написання програм мовою С.
+

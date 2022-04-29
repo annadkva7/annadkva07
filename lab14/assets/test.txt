@@ -1,0 +1,8 @@
+Received information about employees: 
+
+Have insurance: 0
+Experience: 10
+Company: Google
+Worker name: Anna Diakova
+Email: annadkva07@gmail.com
+Characteristics: cool,cool

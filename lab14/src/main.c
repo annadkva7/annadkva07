@@ -7,9 +7,7 @@
  *
  * Розробити функції, які 1) читають дані з файлу, 2) записують дані у файл, 3)
  * виводить масив елементів на екран, 4) №1 з категорії "Методи для роботи з
- * колекцією", 5) сортування масиву за заданим критерієм. # Додаткове завдання
- * Виконати запис та читання масиву структур у двох форматах: текстовому та
- * бінарному.
+ * колекцією".
  *
  * @author Diakova A.
  * @date 25-apr-2022
@@ -49,6 +47,8 @@ int main(void) {
     (array + i)->characteristics = (char*)malloc(16 * sizeof(char));
   }
 
+  bool check = 0;
+
   read_from_file(input_file, array, amount_of_workers);
   write_to_file(output_file, array, amount_of_workers);
 
@@ -57,7 +57,7 @@ int main(void) {
     printf("%s %s: %d\n", (array + i)->details.first_name,(array + i)->details.last_name, (array + i)->experience);
   }
 
-  does_not_have_insurance(array, amount_of_workers);
+  does_not_have_insurance(array, amount_of_workers, check);
 
 
   free(array);

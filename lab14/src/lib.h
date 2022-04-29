@@ -1,20 +1,13 @@
 /**
  * @file lib.h
  * @brief Файл з описом функцій, що
- * 1. void convertion_int - трансформує десятичне число типу int до його
- * бінарного подання.
- * 2. void convertion_char - трансформує символ типу char до його бінарного
- * подання.
- * 3. void read_from_file - зчитує з файлу input.txt вхідну інформацію про
+ * 1. void read_from_file - зчитує з файлу input.txt вхідну інформацію про
  * працівників і передає її програмі.
- * 4. void write_to_file - передає файлу output.txt інформацію про кількість і
- * характеристику робітників.
- * 5. void does_not_have_insuranse - аналізує масив структур і видає на екран
+ * 2. void write_to_file - передає файлу output.txt інформацію про кількість і
+ * характеристику робітників і виводить у термінал.
+ * 3. void does_not_have_insuranse - аналізує масив структур і видає на екран
  * кількість працівників компанії Google без страхування.
- * 6. void sorting_by_seniority - сортує масив структур за характерною ознакою -
- * стаж роботи.
- * 7. void print_on_screen - виводить на екран усю інформацію, отриману з
- * вхідного файлу.
+ * 4. int comparing_seniority - допоміжна функція для функції qsort.
  *
  * @author Diakova A.
  * @date 25-apr-2022
@@ -45,7 +38,7 @@ struct worker {
 
 void read_from_file(FILE *file, struct worker *array, int amount_of_workers);
 void write_to_file(FILE *file, struct worker *array, int amount_of_workers);
-void does_not_have_insurance(struct worker *array, int amount_of_workers);
+void does_not_have_insurance(struct worker *array, int amount_of_workers, bool check);
 int compare_seniority(const void *a, const void *b);
 
 #endif
