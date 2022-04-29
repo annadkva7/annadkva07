@@ -71,15 +71,14 @@ void print_stack(stack *s) {
     printf("\n");
 }
 
-void sorting_by_priority(stack *s, stack *temp, int size) {
+void queue(stack *s, stack *temp, int size) {
     for( int i = 0; i < size; i++) {
-        for( int j = 0; j < size - 1; j++) {
-            if(s->array[j].priority > s->array[j + 1].priority) {
+        for( int j = i + 1; j < size ; j++) {
+            if(s->array[i].priority < s->array[j].priority) {
                 temp->array[1] = s->array[j];
-                s->array[j] = s->array[j + 1];
+                s->array[j] = s->array[i];
 
-                s->array[j + 1] = temp->array[1];
-
+                s->array[i] = temp->array[1];
             }
         }
     }
@@ -89,8 +88,8 @@ void sorting_by_priority(stack *s, stack *temp, int size) {
 
 int main(void) {
 
-    char letter_array[] = "ulabb";
-    int priority_array[] = {2, 3, 5, 1, 4};
+    char letter_array[] = "EOYUUCOST";
+    int priority_array[] = {99, 46, 6, 65, 15, 58, 9, 32, 72};
     int size = sizeof(letter_array)/sizeof(letter_array[0]);
 
     stack *s = (stack*)malloc(sizeof(stack));
@@ -107,10 +106,16 @@ int main(void) {
     }
     print_stack(s);
 
-    sorting_by_priority(s, temp, size);
-    for( int i = 0; i < count; i++) {
+    queue(s, temp, size);
+    for( int i = 0; i < size; ++i) {
         printf("%c ", s->array[i].letter);
     }
+    printf("\n");
+    /* for( int i = 0; i < size + 1; i++) {
+    pop(s);
+    }
+
+    print_stack(s); */
 
     return 0;
 }
