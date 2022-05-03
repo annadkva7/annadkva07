@@ -87,9 +87,12 @@ void queue(stack *s, stack *temp, int size) {
 
 
 int main(void) {
+    int buffer = 20;
 
-    char letter_array[] = "EOYUUCOST";
-    int priority_array[] = {99, 46, 6, 65, 15, 58, 9, 32, 72};
+    char letter_array[20];
+    letter_array[20] = "TYAKAP";
+    int priority_array[20];
+    priority_array[20] = {3, 2, 4, 5, 1, 0};
     int size = sizeof(letter_array)/sizeof(letter_array[0]);
 
     stack *s = (stack*)malloc(sizeof(stack));
@@ -99,6 +102,7 @@ int main(void) {
 
     stack *temp = (stack*)malloc(sizeof(stack));
     temp->array = (Stack_Array*)malloc(1 * sizeof(stack));
+    scanf("%c", &letter_array[4]);
 
     
     for( int i = 0; i < size; i++) {
