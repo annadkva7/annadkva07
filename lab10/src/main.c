@@ -2,7 +2,6 @@
  * @mainpage
  * # Загальне завдання
  * 1. Дано масив з N*N цілих чисел. Елементи головної діагоналі записати в одновимірний масив, отриманий масив упорядкувати за зростанням;
- *
  * 2. Використовувати динамічне виділення пам'яті для масивів;
  *
  * @author Diakova A.
@@ -41,6 +40,9 @@ int main() {
   int *line_array = (int *)malloc(N * sizeof(int *));
   diagonal(line_array, array, N);
   bubble(line_array, N);
+
+  free(array);
+  free(line_array);
   
 
     return 0;

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лабораторна робота № 11. Взаємодія з користувачем шляхом механізму введення/виведення.: Лабораторна робота № 11. Взаємодія з користувачем шляхом механізму введення/виведення.</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Лабораторна робота № 11. Взаємодія з користувачем шляхом механізму введення/виведення.
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Функціональна програма, що знаходить суму двох заданих матриць.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Створено системою Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Пошук');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Пошук');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">Лабораторна робота № 11. Взаємодія з користувачем шляхом механізму введення/виведення. </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+1 Вимоги</h1>
+<p>При виконанні завдань слід зазначити, щоб: • при старті програми виводилась інформація об авторі, номері та темі лабораторної роботи; • при запиті даних, користувач отримав повідомлення, що від нього очікують; • початкові дані вводилися з клавіатури за допомогою функції scanf().; • видача результуючих даних проводилася у консоль за допомогою функції printf(); • після запиту даних треба виконати валідацію введених даних з точки зору бізнес логіки; • на базі введених даних створити стосовні дані речових чисел в діапазоні(-1000; 1000) з мінімальним кроком 0.001 • результат роботи виводу матриці повинен бути відформатованим стосовно наступного прикладу: [ -5.25 33.25 23.00 ] [ -454.50 0.00 123.23 ] [ 323.99 123.55 -123.00 ]</p>
+<p>• програма має мати документацію, що оформлена за допомогою утиліти doxygen; • звіт повинен бути оформлений згідно “Вимогам до структурної побудови звіту”; • продемонструвати відсутність витоків пам’яті за допомогою утиліти valgrind; • доступ до елементів масиву здійснювати через розіменування покажчиків, а не через оператор індексування ([ ]); • продемонструвати роботу розроблених методів за допомогою модульних тестів; • у звіті навести ступень покриття коду модульними тестами. 50% - є мінімально допустимим відсотком покриття коду тестами.</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+1.1 Розробник</h2>
+<ul>
+<li>Дʼякова Анна Юріївна;</li>
+<li>студентка групи КІТ-121г;</li>
+<li>12-квіт-2022.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md3"></a>
+1.2 Загальне завдання</h2>
+<p>Виконати завдання з пулу завдань на свій розсуд згідно її складності.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+1.3 Індивідуальне завдання</h2>
+<p>Знайти суму двох матриць.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
+2 Опис програми</h1>
+<h2><a class="anchor" id="autotoc_md6"></a>
+2.1 Функціональне призначення</h2>
+<p>Програма призначена для вирішення індивідуального завдання із використанням методів взаємодії з користувачем шляхом механізму введення/виведення.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+2.2 Опис логічної структури</h2>
+<p>Функція sum.</p>
+<p>З використанням двох вкладених циклів, знаходжу суму кожного елементу масиву i-рядка j-стовпця у пустий масив **result_array. Потім виводжу отримане на екран за стандартним алгоритмом.</p>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Основна функція</h3>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> main() </div>
+</div><!-- fragment --><p><em>Призначення</em>: головна функція.</p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Структура проекту</h3>
+<div class="fragment"><div class="line">├── assets</div>
+<div class="line">│   └── input.txt</div>
+<div class="line">├── dist</div>
+<div class="line">│   ├── main.bin</div>
+<div class="line">│   └── test.bin</div>
+<div class="line">├── doc</div>
+<div class="line">│   └── lab11.md</div>
+<div class="line">├── Doxyfile</div>
+<div class="line">├── Makefile</div>
+<div class="line">├── README.md</div>
+<div class="line">├── src</div>
+<div class="line">│   ├── lib.c</div>
+<div class="line">│   ├── lib.h</div>
+<div class="line">│   └── main.c</div>
+<div class="line">└── test</div>
+<div class="line">    └── test.c</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
+Висновки</h1>
+<p>Під час виконання цієї лабораторної роботи я поліпшила навички реалізації коду через користування показчиками та взаємодії з користувачем шляху введення/виведення, а також покращила свої навички написання програм мовою С. Наводжу ступень покриття коду модульними тестами: ./dist/test.bin Running suite(s): Programing The result of sum is:</p>
+<p>0 2 4 2 4 6 100%: Checks: 1, Failures: 0, Errors: 0 test/test.c:45:P:lab11:test_sum:0: Passed </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Створено системою &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

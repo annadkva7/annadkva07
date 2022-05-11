@@ -16,11 +16,7 @@ char numbers_searching(char *text, char *temp) {
             if( (*(text + i) >= '0' && *(text + i) <= '9') ) {
               *(temp + i) = *(text + i);
             }
-
-            else {
-
-            }
       }
 
-      return temp;
+      return *temp;
 }

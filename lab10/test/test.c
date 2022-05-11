@@ -26,6 +26,8 @@ START_TEST(test_diagonal)
     {    
         ck_assert_int_eq(expected_value[i], data_line_arr[i]);
     }
+    free(data_arrr);
+    free(data_line_arr);
 }
 END_TEST
 
